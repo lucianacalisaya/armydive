@@ -1,4 +1,15 @@
+.menu-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
 .menu-list {
     display: flex;
+    justify-content: space-evenly;
     list-style-type: none;
+    width: 50vw;
+}
+
+.menu-list-item-link {
+    text-decoration: none;
 }
