@@ -1,4 +1,5 @@
 import logo from './logo.svg';
+import Navbar from './components/Navbar/Navbar';
 import './App.css';
 
 function App() {
@@ -6,6 +7,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
+        <Navbar />
         <p>
           Proyecto de React.js
         </p>
