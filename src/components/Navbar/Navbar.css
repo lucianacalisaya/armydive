@@ -1,7 +1,14 @@
 .menu-container {
     display: flex;
-    justify-content: space-between;
-    align-items: baseline;
+    flex-direction: column;
+    justify-content: baseline;
+    align-items: center;
+}
+
+.armydive-title a{
+    color: #872FD9;
+    text-decoration: none;
+    text-transform: uppercase;
 }
 .menu-list {
     display: flex;
@@ -12,4 +19,6 @@
 
 .menu-list-item-link {
     text-decoration: none;
+    color: white;
+    text-transform: uppercase;
 }
