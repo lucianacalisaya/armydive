@@ -1,8 +1,9 @@
 import Navbar from './components/Navbar/Navbar';
-//import ItemListContainer from './components/ItemListContainer/ItemListContainer';
+import Promo from './components/Promo/Promo';
 import './App.css';
 import CartWidget from "./components/CartWidget/CartWidget";
 import Social from "./components/Social/Social";
+import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 
 
 
@@ -10,9 +11,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        {/* <div>
-          <ItemListContainer greeting="Llegamos a Argentina!"/>
-        </div> */}
+        <Promo greeting="FREE EXPRESS SHIPPING 🚀 UNTIL AUGUST"/>
         <div className="header-top">
           <Social/>
           <CartWidget/>
@@ -20,6 +19,9 @@ function App() {
         <Navbar />
         {/*<FontAwesomeIcon icon="fa-solid fa-basket-shopping-simple" />*/}
       </header>
+      <main>
+        <ItemListContainer greeting="Albums"/>
+      </main>
     </div>
   );
 }
