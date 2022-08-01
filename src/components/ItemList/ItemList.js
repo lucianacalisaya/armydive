@@ -1,3 +1,4 @@
+import './ItemList.css'
 import Item from "../Item/Item"
 
 const ItemList = ({products}) => {
@@ -5,7 +6,7 @@ const ItemList = ({products}) => {
         return obj.category === 'album';
     });
     return(
-        <ul>
+        <ul className="products">
             {album.map(prod => <Item key={prod.id} product={prod}/>)}
         </ul>      
     )

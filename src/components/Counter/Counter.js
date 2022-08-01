@@ -1,3 +1,4 @@
+import './Counter.css'
 import { useState } from 'react'
 
 const Counter = ({ stock, onAdd }) => {
@@ -15,11 +16,11 @@ const Counter = ({ stock, onAdd }) => {
         }
     }
     return (
-        <div>
-            <h4>{count}</h4>
-            <button onClick={decrement}>-</button>
-            <button onClick={increment}>+</button>
-            <button onClick={() => onAdd(count)}>Add to chart</button>
+        <div className='counter'>
+            <button className='counter-button' onClick={decrement}>-</button>
+            <h6 className='counter-count'>{count}</h6>
+            <button className='counter-button' onClick={increment}>+</button>
+            <button className='counter-add' onClick={() => onAdd(count)}>Add to chart</button>
         </div>
     )
 }
