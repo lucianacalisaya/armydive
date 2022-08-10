@@ -36,7 +36,7 @@ const products = [
         description: 'Sweatshirt, Hoodie, Knitted Beanie, Knitted Muffler, Socks, String bag, Pouch set'
     },
     {
-        id: '3',
+        id: '5',
         name: 'NEW ERA X MLB OFFICIAL COLLABORATION',
         price: '59.95',
         category: 'merch',
@@ -61,6 +61,7 @@ export const getProductsByCategory = (categoryId) => {
         }, 500)
     })
 }
+
 
 export const getProductById = (id) => {
     return new Promise((resolve) => {

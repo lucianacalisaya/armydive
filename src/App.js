@@ -23,8 +23,8 @@ function App() {
         </header>
         <main>
         <Routes>
-          <Route path='/' element={<ItemListContainer greeting='Our Products'/>}/>
-          <Route path='/category/:categoryId' element={<ItemListContainer greeting='Albums'/>} />
+          <Route path='/' element={<ItemListContainer/>}/>
+          <Route path='/category/:categoryId' element={<ItemListContainer/>} />
           <Route path='/detail/:productId' element={<ItemDetailContainer />} />  
         </Routes>
         </main>

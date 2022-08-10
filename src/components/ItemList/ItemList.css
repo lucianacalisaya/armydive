@@ -1,5 +1,6 @@
-.products {
+.itemList {
     display: flex;
     list-style: none;
     justify-content: space-around;
+    flex-wrap: wrap;
 }
