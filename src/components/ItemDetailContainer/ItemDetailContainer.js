@@ -1,7 +1,7 @@
 import { useState, useEffect} from 'react'
 import { getProductById } from '../../asyncMock'
 import ItemDetail from '../ItemDetail/ItemDetail'
-import { useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 
 const ItemDetailContainer = () => {
     const [product, setProduct] = useState({})
@@ -20,9 +20,12 @@ const ItemDetailContainer = () => {
 
     return (
         <div>
-            <h4>Details</h4>
-            <ItemDetail {...product}/>
+            {/* <button>
+                <Link to='/'>--</Link> en realida hacerlo para ir hacia atras
+            </button> */}
+           <ItemDetail {...product}/>    
         </div>
+          
     )
 }
 

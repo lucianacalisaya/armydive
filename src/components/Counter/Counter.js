@@ -1,8 +1,8 @@
 import './Counter.css'
 import { useState } from 'react'
 
-const Counter = ({ stock, onAdd }) => {
-    const [count, setCount] = useState(1)
+const Counter = ({ onConfirm, stock, initial = 1 }) => {
+    const [count, setCount] = useState(initial)
 
     const increment = () => {
         if(count < stock ) {
@@ -17,10 +17,12 @@ const Counter = ({ stock, onAdd }) => {
     }
     return (
         <div className='counter'>
-            <button className='counter-button' onClick={decrement}>-</button>
-            <h6 className='counter-count'>{count}</h6>
-            <button className='counter-button' onClick={increment}>+</button>
-            <button className='counter-add' onClick={() => onAdd(count)}>Add to chart</button>
+            <div className='counter__buttons'>
+                <button className='counter__button counter__button--left' onClick={decrement}>-</button>
+                <h6 className='counter__count'>{count}</h6>
+                <button className='counter__button counter__button--right' onClick={increment}>+</button>  
+            </div>
+            <button className='counter__add' onClick={() => onConfirm(count)}>Add to cart</button>
         </div>
     )
 }
