@@ -1,20 +1,20 @@
-import { useState, useEffect} from 'react'
-import { getProductById } from '../../asyncMock'
-import ItemDetail from '../ItemDetail/ItemDetail'
-import { Link, useParams } from 'react-router-dom'
+import { useState, useEffect} from 'react';
+import { getProductById } from '../../asyncMock';
+import ItemDetail from '../ItemDetail/ItemDetail';
+import { useParams } from 'react-router-dom';
 
 const ItemDetailContainer = () => {
-    const [product, setProduct] = useState({})
+    const [product, setProduct] = useState(); /*Aca tenia llaves pero las saque porque es una de las diferencias que tenia con lo que subio el profe, no creo que esto sea el error.*/ 
 
-    const { productId } = useParams()
+    const { productId } = useParams();
 
     useEffect(() => {
         getProductById(productId)
             .then(product => {
-                setProduct(product)
+                setProduct(product);
             })
             .catch(error => {
-                console.log(error)
+                console.log(error);
             })
     }, [productId])
 
@@ -26,7 +26,7 @@ const ItemDetailContainer = () => {
            <ItemDetail {...product}/>    
         </div>
           
-    )
-}
+    );
+};
 
 export default ItemDetailContainer

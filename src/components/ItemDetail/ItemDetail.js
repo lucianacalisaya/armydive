@@ -1,14 +1,26 @@
-import './ItemDetail.css'
+import './ItemDetail.css';
 import Counter from '../Counter/Counter';
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
+import CartContext from '../../context/CartContext';
 
-const ItemDetail = ({ name, img, price, description, stock }) => {
+const ItemDetail = ({ id, name, img, price, description, stock }) => {
     
     const [quantityToAdd, setQuantityToAdd] = useState(0)
+
+    const { addItem, getProductQuantity } = useContext(CartContext)
+
     const handleOnAdd = (quantity) => {
         setQuantityToAdd(quantity)
-    };
+
+        const productToAdd = {
+            id, name, price, quantity
+        }
+
+        addItem(productToAdd)
+    }
+
+    const productQuantity = getProductQuantity(id)
 
     return (
         <div className='detail'>
@@ -20,7 +32,7 @@ const ItemDetail = ({ name, img, price, description, stock }) => {
                 <p className='detail__price'>${price}</p>
                 {
                     quantityToAdd === 0 ? (
-                    <Counter stock={stock} onConfirm={handleOnAdd}/> 
+                    <Counter onAdd={handleOnAdd} stock={stock} initial={productQuantity} /> 
                     ) : (
                         <Link className='detail__cart' to='/cart'>Go to cart</Link>
                     )
@@ -28,7 +40,7 @@ const ItemDetail = ({ name, img, price, description, stock }) => {
                 <p className='detail__description'>{description}</p>
             </div>
         </div>
-    )
-}
+    );
+};
 
 export default ItemDetail

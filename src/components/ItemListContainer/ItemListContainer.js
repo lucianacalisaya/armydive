@@ -1,26 +1,26 @@
-import './ItemListContainer.css'
-import { useState, useEffect } from 'react'
-import { getProductsFromMarket, getProductsByCategory} from '../../asyncMock'
-import ItemList from '../ItemList/ItemList'
-import { useParams } from 'react-router-dom'
+import './ItemListContainer.css';
+import { useState, useEffect } from 'react';
+import { getProductsFromMarket, getProductsByCategory} from '../../asyncMock';
+import ItemList from '../ItemList/ItemList';
+import { useParams } from 'react-router-dom';
 
 const ItemListContainer = () => {
-    const [products, setProducts] = useState([])
-    const {categoryId} = useParams()
+    const [products, setProducts] = useState([]);
+    const {categoryId} = useParams();
 
 
     
     useEffect(() => {
         if (!categoryId) {
             getProductsFromMarket().then(products => {
-                setProducts(products)
-            })
+                setProducts(products);
+            });
         } else {
             getProductsByCategory(categoryId).then(products => {
-                setProducts(products)
-            })
-        }
-    }, [categoryId])
+                setProducts(products);
+            });
+        };
+    }, [categoryId]);
     return (
         <>
             <div className="albums-container">
@@ -28,7 +28,7 @@ const ItemListContainer = () => {
                 <ItemList products={products}/>
             </div>
         </>
-    )
-}
+    );
+};
 
 export default ItemListContainer
