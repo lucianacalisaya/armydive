@@ -1,34 +1,36 @@
 import { useContext } from 'react';
 import CartContext from '../../context/CartContext';
+import './CartItem.css'
 
-const CartItem = ({id, name, quantity, price}) => {
+const CartItem = ({id, img, name, quantity, price}) => {
     const {removeItem} = useContext(CartContext);
     const handleRemove = (id) => {
         removeItem(id)
     }
 
     return (
-        <article className='CardCartItem'>
-            <header className="HeaderCartItem">
-                <h2 className="ItemHeaderCartItem">
+        <div className='cartItem'>
+            <div className='cartItem__detail'>
+                <img className='cartItem__image' src={img} alt={name} />
+                <h2 className=''>
                     {name}
                 </h2>
-            </header>
-            <section className='ContainerItemCartItem'>
-                <p className="InfoCartItem">
-                    Cantidad: {quantity}
+            </div>
+            <div className='cartItem__detail'>
+                <p className=''>
+                    Quantity: {quantity}
                 </p>
-                <p className="InfoCartItem">
-                    Precio x Unidad: ${price}
+                <p className=''>
+                    Price x unit: ${price}
                 </p>
-            </section>           
-            <footer className='ItemFooterCartItem'>
-                 <p className="InfoCartItem">
+            </div>           
+            <div className='cartItem__detail'>
+                 <p className=''>
                      Subtotal: ${price * quantity}
                  </p>
-                 <button className='ButtonCartItem' onClick={() => handleRemove(id)}>X</button>
-            </footer>
-        </article>
+                 <button className='' onClick={() => handleRemove(id)}>remove</button>
+            </div>
+        </div>
     )
 }
 export default CartItem
