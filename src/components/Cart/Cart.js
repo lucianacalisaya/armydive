@@ -4,7 +4,7 @@ import CartContext from '../../context/CartContext'
 import { Link } from 'react-router-dom';
 
 const Cart = () => {
-    const { cart, clearCart, getQuantity, getTotal } = useContext(CartContext)  
+    const { cart, clearCart, getQuantity, getTotal } = useContext(CartContext) 
 
     const totalQuantity = getQuantity()
     const total = getTotal()
@@ -17,7 +17,8 @@ const Cart = () => {
             </div>
         )
     }
-
+    // setTimeout(() => {
+    //     console.log('probando settimeout para ver la imagen')
     return (     
         <div>
             { cart.map(p => <CartItem key={p.id} {...p}/>) }

@@ -12,14 +12,14 @@ const CartWidget = () => {
     if(quantity === 0) {
         return (
             <div className="cart-container">
-               <img src="images/cart.svg" alt="cart-widget"/>
+               <img src="https://cdn-icons-png.flaticon.com/512/833/833314.png" alt="cart-widget"/>
             { quantity } 
             </div>
         )
     }
     return (
         <Link to='/cart' className="cart-container">
-            <img src="images/cart.svg" alt="cart-widget"/>
+            <img src="https://cdn-icons-png.flaticon.com/512/833/833314.png" alt="cart-widget"/>
             { quantity }
         </Link>
     );
