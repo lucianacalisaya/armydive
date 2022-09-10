@@ -1,0 +1,38 @@
+.product {
+    width: 18rem;
+    padding: 1rem;
+    list-style-type: none;
+    text-decoration: none;
+    color: #000000;
+    &:hover img{
+        transform: scale(1.06);
+    }
+    &:hover h3{
+        color: #d87093;
+    }
+    &__imageContainer {
+        width: 100%;
+        height: 16rem;
+        overflow: hidden;
+        border-radius: 5px;
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+    &__title {
+        height: 4rem;
+        display: flex;
+        justify-content: flex-start;
+        align-items: baseline;
+        font-weight: unset;
+        text-align: initial;
+    }
+    &__price {
+        span {
+            font-weight: lighter;
+            font-style: italic;
+        }
+    }
+}

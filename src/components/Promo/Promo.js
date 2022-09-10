@@ -1,4 +1,4 @@
-import './Promo.css'
+import './Promo.scss'
 const Promo = ({greeting}) => {
     return (
         <div className="banner-container">

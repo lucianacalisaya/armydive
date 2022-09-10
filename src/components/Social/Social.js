@@ -1,4 +1,4 @@
-import './Social.css';
+import './Social.scss';
 const Social = () => {
     return (
        <div className='header-social-container'>

@@ -1,6 +1,7 @@
 import { useState, useContext } from "react"
 import CartContext from "../../context/CartContext"
-
+import Spinner from "../Spinner/Spinner"
+import './Checkout.scss'
 import { db } from "../../services/firebase"
 import { addDoc, collection, getDocs, query, where, documentId, writeBatch } from "firebase/firestore"
 import { useNavigate } from 'react-router-dom'
@@ -62,13 +63,13 @@ const Checkout = () => {
     
                 const orderRef = collection(db, 'orders')
                 const orderAdded = await addDoc(orderRef, objOrder)
-    
                 console.log(`Your order id is: ${orderAdded.id}`)
+
                 clearCart()
                 setOrderCreated(true)
                 setTimeout(() => {
                     navigate('/')
-                }, 3000)
+                }, 3500)
             } else {
                 console.log('Products out of stock')
             }
@@ -80,11 +81,21 @@ const Checkout = () => {
     }
 
     if(isLoading) {
-        return <h1>Loading...</h1>
+        return (
+            <div className='checkoutLoading'>
+                <h1 className='checkoutLoading__title'>Creating order</h1>
+                <Spinner/>
+            </div>
+        ) 
     }
 
     if(orderCreated) {
-        return <h1>Order created successfully. You will be redirected to home</h1>
+        return (
+            <div className="checkoutSuccessful">
+                <h1 className='checkoutSuccessful__title'>Order created successfully.</h1>
+                <h2>You will be redirected.</h2>
+            </div>
+        )
     }
     const handleChangeName = (e) => {
         setName(e.target.value);
@@ -93,20 +104,21 @@ const Checkout = () => {
         setEmail(e.target.value);
     };
     return (
-        <>
-            <h1>Checkout</h1>
-            <form>
-                <div>
+        <div className='checkout'>
+            <h1 className='checkout__title'>Checkout</h1>
+            <hr/>
+            <form className='checkout__form'>
+                <div className='checkout__inputBox'>
                     <label>Name:</label>
-                    <input type='text' value={name} onChange={handleChangeName}/>
+                    <input className='checkout__input' type='text' value={name} onChange={handleChangeName}/>
                 </div>
-                <div>
+                <div className='checkout__inputBox'>
                     <label>Email:</label>
-                    <input type='text' value={email} onChange={handleChangeEmail}/>
+                    <input className='checkout__input'type='text' value={email} onChange={handleChangeEmail}/>
                 </div>
+                <button className='checkout__order' onClick={createOrder}>Generate order</button>
             </form>
-            <button className="Option" onClick={createOrder}>Generate order</button>
-        </>
+        </div>
     )
 }
 

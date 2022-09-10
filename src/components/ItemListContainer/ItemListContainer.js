@@ -1,4 +1,4 @@
-import './ItemListContainer.css';
+import './ItemListContainer.scss';
 import { useState, useEffect } from 'react';
 import ItemList from '../ItemList/ItemList';
 import { useParams } from 'react-router-dom';
@@ -26,11 +26,9 @@ const ItemListContainer = () => {
             setLoading(false)
         })
     }, [categoryId]);
-
     if(loading) {
-        return <h1>Loading...</h1>
+        return
     }
-    
     return (
         <>
             <div className="albums-container">

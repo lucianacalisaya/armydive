@@ -1,4 +1,4 @@
-import './Counter.css';
+import './Counter.scss';
 import { useState } from 'react';
 
 const Counter = ({ stock = 0, initial = 1, onAdd }) => {

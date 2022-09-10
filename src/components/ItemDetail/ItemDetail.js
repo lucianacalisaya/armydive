@@ -1,4 +1,4 @@
-import './ItemDetail.css';
+import './ItemDetail.scss';
 import Counter from '../Counter/Counter';
 import { useState, useContext } from 'react';
 import { Link } from 'react-router-dom';

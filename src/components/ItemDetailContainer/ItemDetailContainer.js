@@ -26,7 +26,6 @@ const ItemDetailContainer = () => {
     if(loading) {
         return 
     }
-    //no me gusta que se vea el texto
     return (
         <div>
             {/* <button>
