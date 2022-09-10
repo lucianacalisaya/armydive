@@ -1,6 +1,6 @@
 import Navbar from './components/Navbar/Navbar';
 import Promo from './components/Promo/Promo';
-import './App.css';
+import './App.scss';
 import CartWidget from "./components/CartWidget/CartWidget";
 import Social from "./components/Social/Social";
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
@@ -8,7 +8,7 @@ import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailCont
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Cart from './components/Cart/Cart';
 import { CartContextProvider } from './context/CartContext';
-
+import Checkout from './components/Checkout/Checkout';
 
 function App() {
   return (
@@ -30,6 +30,7 @@ function App() {
             <Route path='/category/:categoryId' element={<ItemListContainer/>} />
             <Route path='/detail/:productId' element={<ItemDetailContainer />} />  
             <Route path='/cart' element={<Cart/>}/>
+            <Route path='/checkout' element={<Checkout/>}/>
           </Routes>
           </main>
         </BrowserRouter>
