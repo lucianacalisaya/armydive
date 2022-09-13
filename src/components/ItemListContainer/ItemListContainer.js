@@ -1,6 +1,7 @@
 import './ItemListContainer.scss';
 import { useState, useEffect } from 'react';
 import ItemList from '../ItemList/ItemList';
+import Carousel from '../Carousel/Carousel';
 import { useParams } from 'react-router-dom';
 import { getDocs, collection, query, where } from 'firebase/firestore';
 import { db } from '../../services/firebase';
@@ -30,12 +31,11 @@ const ItemListContainer = () => {
         return
     }
     return (
-        <>
-            <div className="albums-container">
-                <h3 className="albums-title">{categoryId ? categoryId : 'Our products'}</h3>
-                <ItemList products={products}/>
-            </div>
-        </>
+        <div className="albums-container">
+            <h3 className="albums-title">{categoryId ? categoryId : 'Our products'}</h3>
+            <Carousel/>
+            <ItemList products={products}/>
+        </div>
     );
 };
 
