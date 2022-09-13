@@ -1,25 +1,37 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { getDocs, collection, query } from 'firebase/firestore';
 import { db } from '../../services/firebase';
+import { Link } from 'react-router-dom';
 import './Carousel.scss'
 
 const Carousel = () => {
-    const [loading, setLoading] = useState(true);
     const [products, setProducts] = useState([]);
-    const collectionRef = query(collection(db, 'products'))
-        getDocs(collectionRef).then(response => {
-            const productsAdapted = response.docs.map(doc => {
-                const data=doc.data()
-                return { id: doc.id, ...data}
-            })
-            setProducts(productsAdapted)
-        }).catch(error=> {
-            console.log(error)
-        }).finally(() => {
-            setLoading(false)
-        })
+    const collectionRef = query(collection(db, 'products'));
+    getDocs(collectionRef).then(response => {
+        const productsAdapted = response.docs.map(doc => {
+            const data=doc.data()
+            return { id: doc.id, ...data}
+        });
+        setProducts(productsAdapted)
+    }).catch(error=> {
+        console.log(error)
+    });
+
     const [currentIndex, setCurrentIndex] = useState(0);
 
+    const carouselInfinite = () => {
+        if (currentIndex === products.length-1) {
+            return setCurrentIndex(0);
+        }
+        return setCurrentIndex(currentIndex+1);
+    }
+    useEffect(() => {
+        const interval = setInterval(() => {
+            carouselInfinite()
+        }, 3000)
+        return () => clearInterval(interval);
+    })
+    
     const next = () => {
       setCurrentIndex((currentIndex + 1) % products.length);
     };
@@ -27,21 +39,18 @@ const Carousel = () => {
     const prev = () => {
       setCurrentIndex((currentIndex - 1 + products.length) % products.length);
     };
-
-    if(loading) {
-        return
-    };
+    
 
     return (
-      <>
-        <div className='slider-container'>
+      <div className='slider'>
+        <div className='slider__container'>
           {products.map((prod) => (
             <div key={prod.id} className={
-                products[currentIndex].id === prod.id ? 'fade' : 'slide fade'
+                products[currentIndex].id === prod.id ? 'fade' : 'slider__item fade'
               }
             >
-              <img src={prod.img} alt={prod.title} className='photo' />
-              <div className='caption'>{prod.title}</div>
+              <img src={prod.img} alt={prod.name} className='slider__img' />
+              <div className='slider__caption'><Link className='slider__link' to={`/detail/${prod.id}`}>Buy</Link></div>
             </div>
           ))}
   
@@ -63,7 +72,7 @@ const Carousel = () => {
             ></span>
           ))}
         </div>
-      </>
+      </div>
     );
 
 }
