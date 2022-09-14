@@ -10,6 +10,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Cart from './components/Cart/Cart';
 import { CartContextProvider } from './context/CartContext';
 import Checkout from './components/Checkout/Checkout';
+import Footer from './components/Footer/Footer'
 
 function App() {
   return (
@@ -23,7 +24,6 @@ function App() {
               <CartWidget/>
             </div>
             <Navbar />
-            {/*<FontAwesomeIcon icon="fa-solid fa-basket-shopping-simple" />*/}
           </header>
           <main>
           <Routes>
@@ -34,6 +34,7 @@ function App() {
             <Route path='/checkout' element={<Checkout/>}/>
           </Routes>
           </main>
+          <Footer/>
         </BrowserRouter>
       </CartContextProvider>
     </div>
