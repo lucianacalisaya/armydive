@@ -2,12 +2,9 @@ import './Item.scss';
 import { Link } from 'react-router-dom';
 
 const Item = ({id, name, img, price}) => {
-    const handleClick = (e) => {
-        e.stopPropagation();
-    };/*Le puse el handleClick para ver si esto estaba afectando a que vuelva el valor a 1 pero no creo que sea eso*/
 
     return (
-            <Link to={`/detail/${id}` } className='product' onClick={handleClick}>
+            <Link to={`/detail/${id}` } className='product'>
                 <div className='product__imageContainer'>
                     <img className='product__image' src={img} alt={name}/>
                 </div>

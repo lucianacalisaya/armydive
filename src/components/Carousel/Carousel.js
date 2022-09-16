@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react'
-import { getDocs, collection, query } from 'firebase/firestore';
+import { getDocs, collection, query, limit } from 'firebase/firestore';
 import { db } from '../../services/firebase';
 import { Link } from 'react-router-dom';
 import './Carousel.scss'
 
 const Carousel = () => {
     const [products, setProducts] = useState([]);
-    const collectionRef = query(collection(db, 'products'));
+    const collectionRef = query(collection(db, 'products'), limit(5));
     getDocs(collectionRef).then(response => {
         const productsAdapted = response.docs.map(doc => {
             const data=doc.data()
