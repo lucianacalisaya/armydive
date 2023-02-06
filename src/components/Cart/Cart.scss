@@ -36,14 +36,14 @@
         display: flex;
         gap: 3rem;
     }
-    &__totalContainer {
+    &__subtotalContainer {
         margin-top: 1rem;
         display: flex;
         flex-direction: column;
         gap: 8px;
         width: 30%;
     }
-    &__total {
+    &__subtotal {
         text-transform: uppercase;
         width: 100%;
         display: flex;
@@ -61,5 +61,17 @@
         text-transform: uppercase;
         font-weight: bold;
         border-radius: 5px;
+    }
+}
+
+
+@media only screen and (max-width:989px) {
+    .cart {
+        &__detail {
+            flex-direction: column;
+        }
+        &__subtotalContainer {
+            width: 100%;
+        }
     }
 }

@@ -11,16 +11,16 @@ const CartWidget = () => {
 
     if(quantity === 0) {
         return (
-            <div className="cart-container">
-               <img src="https://cdn-icons-png.flaticon.com/512/833/833314.png" alt="cart-widget"/>
-            { quantity } 
+            <div className="cartWidget">
+               <img className='cartWidget__empty' src="https://cdn-icons-png.flaticon.com/512/833/833314.png" alt="cart-widget"/>
+               <p className='cartWidget__quantity'>{ quantity }</p>
             </div>
         )
     }
     return (
-        <Link to='/cart' className="cart-container">
-            <img src="https://cdn-icons-png.flaticon.com/512/833/833314.png" alt="cart-widget"/>
-            { quantity }
+        <Link to='/cart' className="cartWidget">
+            <img className='cartWidget__notEmpty' src="https://cdn-icons-png.flaticon.com/512/833/833314.png" alt="cart-widget"/>
+            <p className='cartWidget__quantity'>{ quantity }</p>
         </Link>
     );
 };

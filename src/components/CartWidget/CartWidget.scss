@@ -1,12 +1,21 @@
-.cart-container {
-    width: 3.5rem;
+.cartWidget {
+    width: 4.5rem;
     padding: 0.5rem 1rem;
     background-color: #fbdfe9;
     display: flex;
     text-decoration: none;
     font-size: 1.2rem;
+    height: 3rem;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
     img{
-        width: 90%;
-        margin-right: 0.5rem;
+        width: 1.2rem;
+        height: 1.2rem;
+    }
+    &__quantity {
+        font-size: 12px;
+        font-weight: bold;
+        color: black;
     }
 }

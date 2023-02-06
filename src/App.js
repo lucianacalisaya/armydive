@@ -1,8 +1,5 @@
-import Navbar from './components/Navbar/Navbar';
-import Promo from './components/Promo/Promo';
-import './App.scss';
-import CartWidget from "./components/CartWidget/CartWidget";
-import Social from "./components/Social/Social";
+import './App.scss'
+import Header from './components/Header/Header';
 import MainContainer from './components/MainContainer/MainContainer';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer'
@@ -17,14 +14,7 @@ function App() {
     <div className="App">
       <CartContextProvider>
         <BrowserRouter>
-          <header className="App-header">
-            <Promo greeting="FREE EXPRESS SHIPPING 🚀 UNTIL AUGUST"/>
-            <div className="header-top">
-              <Social/>
-              <CartWidget/>
-            </div>
-            <Navbar />
-          </header>
+          <Header/>
           <main>
           <Routes>
             <Route path='/' element={<MainContainer/>}/>

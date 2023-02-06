@@ -5,7 +5,7 @@ import { getDoc, doc } from 'firebase/firestore';
 import { db } from '../../services/firebase';
 
 const ItemDetailContainer = () => {
-    const [product, setProduct] = useState(); /*Aca tenia llaves pero las saque porque es una de las diferencias que tenia con lo que subio el profe, no creo que esto sea el error.*/ 
+    const [product, setProduct] = useState();
     const [loading, setLoading] = useState(true)
     const { productId } = useParams();
 

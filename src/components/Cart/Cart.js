@@ -9,6 +9,7 @@ const Cart = () => {
 
     const totalQuantity = getQuantity()
     const total = getTotal()
+    const roundTotal = total.toFixed(2);
 
     if(totalQuantity === 0) {
         return (
@@ -29,8 +30,8 @@ const Cart = () => {
                 <div>
                     { cart.map(p => <CartItem key={p.id} {...p}/>) }
                 </div>
-                <div className='cart__totalContainer'>
-                    <h3 className='cart__total'>Total: <span className='cart__price'>${total}</span></h3>
+                <div className='cart__subtotalContainer'>
+                    <h3 className='cart__subtotal'>Subtotal: <span className='cart__price'> ${roundTotal}</span></h3>
                     {/* saque clearCart <button onClick={() => clearCart()} className='cart__removeButton'>Empty cart</button>*/}
                     <Link className='cart__checkoutLink' to='/checkout'>Checkout</Link>
                 </div>

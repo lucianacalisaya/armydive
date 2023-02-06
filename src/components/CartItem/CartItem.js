@@ -19,14 +19,14 @@ const CartItem = ({id, img, name, quantity, price}) => {
                         {name}
                     </h2>
                 </div>
-                <p className=''>
-                    Quantity: {quantity}
+                <p className='cartItem__unitPrice'>
+                    ${price} USD
                 </p>
-                <p className=''>
-                    Price x unit: ${price}
+                <p className='cartItem__quantity'>
+                    {quantity}
                 </p>
-                <p className=''>
-                     Subtotal: ${price * quantity}
+                <p className='cartItem__totalPrice'>
+                    <span className='cartItem__totalPrice--bold'>Total:</span> ${price * quantity} USD
                  </p>
             </div>
         </div>
