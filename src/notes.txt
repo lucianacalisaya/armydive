@@ -1,0 +1,4 @@
+to do list:
+footer fixed cuando body<windowHeight
+.replace(/\s/g , "-") para hot-sale title
+vaciar carrito

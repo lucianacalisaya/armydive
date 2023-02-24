@@ -55,11 +55,11 @@ const Carousel = () => {
           ))}
   
           <button onClick={prev} className='prev'>
-            prev
+            <img className="slider__arrow slider__arrow--prev" src="https://cdn-icons-png.flaticon.com/512/892/892528.png" alt=""/>
           </button>
   
           <button onClick={next} className='next'>
-            next
+            <img className="slider__arrow slider__arrow--next" src="https://cdn-icons-png.flaticon.com/512/892/892528.png" alt=""/>
           </button>
         </div>
   

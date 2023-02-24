@@ -1,4 +1,4 @@
-.banner-container {
+.banner {
     background-color: aliceblue;
     display: flex;
     justify-content: center;
@@ -6,4 +6,10 @@
     color: #000000;
     font-size: 12px;
     padding: 0.5rem 0;
+    &__close {
+        width: 1rem;
+        height: 1rem;
+        position: absolute;
+        right: 1rem;
+    }
 }

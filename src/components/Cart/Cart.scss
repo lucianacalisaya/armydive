@@ -61,6 +61,12 @@
         text-transform: uppercase;
         font-weight: bold;
         border-radius: 5px;
+        &:hover {
+            background-color: #d87093;
+            border-color: #d87093;
+            color: white;
+            transition: 0.5s linear;
+        }
     }
 }
 

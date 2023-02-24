@@ -30,7 +30,7 @@ const MainContainer = () => {
     }
     return (
         <div className="main">
-            {/*<Carousel/>*/}
+            <Carousel/>
             <h3 className="main__title">Our products</h3>
             <ItemList products={products}/>
         </div>
