@@ -35,7 +35,7 @@ const Header = () => {
                     </button>
                 </div>
                 <h1 className='header__logo'>
-                    <Link to='./' className='header__logo--link'>Armydive</Link>
+                    <Link to='armydive/' className='header__logo--link'>Armydive</Link>
                 </h1>
                 {width>699 ? <Navbar/> : <Hamburger/>}
 

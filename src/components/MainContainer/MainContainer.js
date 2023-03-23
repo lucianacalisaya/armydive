@@ -1,7 +1,7 @@
 import './MainContainer.scss';
 import { useState, useEffect } from 'react';
 import ItemList from '../ItemList/ItemList';
-import Carousel from '../Carousel/Carousel';
+//import Carousel from '../Carousel/Carousel';
 import { useParams } from 'react-router-dom';
 import { getDocs, collection } from 'firebase/firestore';
 import { db } from '../../services/firebase';
