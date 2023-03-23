@@ -1,5 +1,4 @@
 import './Promo.scss';
-import { useState } from 'react';
 
 const Promo = ({greeting}) => {
     // const [close, setClose] = useState(false);
