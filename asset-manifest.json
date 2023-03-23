@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/armydive/static/css/main.f2c946a9.css",
-    "main.js": "/armydive/static/js/main.63128228.js",
+    "main.js": "/armydive/static/js/main.af92cdaa.js",
     "static/js/787.a110add7.chunk.js": "/armydive/static/js/787.a110add7.chunk.js",
     "index.html": "/armydive/index.html",
     "main.f2c946a9.css.map": "/armydive/static/css/main.f2c946a9.css.map",
-    "main.63128228.js.map": "/armydive/static/js/main.63128228.js.map",
+    "main.af92cdaa.js.map": "/armydive/static/js/main.af92cdaa.js.map",
     "787.a110add7.chunk.js.map": "/armydive/static/js/787.a110add7.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.f2c946a9.css",
-    "static/js/main.63128228.js"
+    "static/js/main.af92cdaa.js"
   ]
 }
