@@ -68,7 +68,7 @@ const Checkout = () => {
                 clearCart()
                 setOrderCreated(true)
                 setTimeout(() => {
-                    navigate('armydive/')
+                    navigate('/')
                 }, 3500)
             } else {
                 console.log('Products out of stock')

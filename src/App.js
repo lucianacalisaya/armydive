@@ -17,11 +17,11 @@ function App() {
           <Header/>
           <main>
           <Routes>
-            <Route path='armydive/' element={<MainContainer/>}/>
-            <Route path='./armydive/category/:categoryId' element={<ItemListContainer/>} />
-            <Route path='./detail/:productId' element={<ItemDetailContainer />} />  
-            <Route path='./cart' element={<Cart/>}/>
-            <Route path='./checkout' element={<Checkout/>}/>
+            <Route path='/' element={<MainContainer/>}/>
+            <Route path='/category/:categoryId' element={<ItemListContainer/>} />
+            <Route path='/detail/:productId' element={<ItemDetailContainer />} />  
+            <Route path='/cart' element={<Cart/>}/>
+            <Route path='/checkout' element={<Checkout/>}/>
           </Routes>
           </main>
           <Footer/>
