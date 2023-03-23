@@ -3,3 +3,5 @@ El proyecto es un e-commerce realizado con React.js y se puede acceder a la part
 https://armydive.netlify.app/
 
 Además se usa SASS y BEM para facilitar la lectura de estilos.
+
+Luciana
