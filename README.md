@@ -1,26 +1,34 @@
-# ArmyDive
+ArmyDive 🛍️
 
-ArmyDive is a fictional e-commerce website for BTS merchandise and albums, built with React, SASS, and Firebase. The project focuses on creating a responsive shopping experience with a design tailored to fans of the group.
+A responsive fictional e-commerce website for BTS merchandise and albums, built with React, SASS, and Firebase.
 
-## Features
+ArmyDive is a personal frontend project inspired by BTS merchandise stores. It provides a responsive shopping interface where users can explore products, view product details, manage a shopping cart, and access a checkout flow.
 
-- Responsive interface adapted to different screen sizes.
-- Component-based UI built with React.
-- Custom styling using SASS.
-- Firebase integration for backend functionality.
+The project focuses on building a component-based user interface with React and integrating Firebase Firestore for data management.
 
-## Tech Stack
+Features
 
-- **Frontend:** React, JavaScript, SASS
-- **Backend services:** Firebase
-- **Design:** Responsive web design
+Responsive design: Layout adapted to different screen sizes.
 
-## Getting Started
+Product listing: Browse the available products.
 
-### Prerequisites
+Product details: View individual product information.
 
-- Node.js and npm
-- Access to the project's Firebase configuration, if required
+Shopping cart: Add products to a cart and manage selections.
+
+Checkout flow: Navigate through the checkout experience.
+
+Firestore integration: Connect the application to Firebase Firestore for data management.
+
+Tech Stack
+
+React — Component-based user interface.
+
+JavaScript — Application logic.
+
+SASS — Styling and interface customization.
+
+Firebase Firestore — Database integration.
 
 ### Installation
 
